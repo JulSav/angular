@@ -1,0 +1,10 @@
+<h1>Example 1</h1>
+<app-example1></app-example1>
+
+
+<h1>Example 2</h1>
+<app-example2 [name]="currentName" [age]="currentAge" (newItemEvent)="addItem($event)"></app-example2>
+<ul class="example">
+  <li class="badge" *ngFor="let item of items">{{item}}</li>
+</ul>
+

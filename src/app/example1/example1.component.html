@@ -1,0 +1,42 @@
+<!-- One-way binding -->
+<!-- From Component to View -->
+<h2>One-way binding</h2>
+<h3>{{person.name | uppercase}} Details</h3>
+<div><span>id: </span>{{person.id}}</div>
+<div><span>name: </span>{{person.name}}</div>
+
+
+<!-- Two-way binding -->
+<h2>Two-way binding</h2>
+<div>
+  <label for="name">Person name: </label>
+  <input id="name" [(ngModel)]="person.name" placeholder="name">
+</div>
+
+
+
+<h1>ngFor</h1>
+<ul class="people">
+  <li *ngFor="let person of people" (click)="onSelect(person)">
+    <span class="badge">{{person.id}}</span> {{person.name}}
+  </li>
+</ul>
+
+
+
+<!-- <h2>{{selectedPerson.name | uppercase}} Details</h2>
+<div><span>id: </span>{{selectedPerson.id}}</div>
+<div>
+  <label for="person-name">Person name: </label>
+  <input id="person-name" [(ngModel)]="selectedPerson.name" placeholder="name">
+</div> -->
+<div *ngIf="selectedPerson">
+
+  <h2>{{selectedPerson.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{selectedPerson.id}}</div>
+  <div>
+    <label for="person-name">Person name: </label>
+    <input id="person-name" [(ngModel)]="selectedPerson.name" placeholder="name">
+  </div>
+
+</div>
