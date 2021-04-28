@@ -1,0 +1,65 @@
+<div *ngIf="isTheNgContentExample; else ngTemplateExample">
+    <app-profile [ngTemplateChildExample]="ngTemplateChildExample">
+        <h2>Example for ng-content</h2>
+        <ul>
+            <li *ngFor="let information of informations">
+                {{ information.name | uppercase}}
+                {{ information.author | lowercase}}
+
+            </li>
+        </ul>
+
+        <h3>Some more examples  with pipe</h3>
+        <div>
+                <h4>Name: {{ userName }}</h4>
+                <h4>Age: {{ age | number: '1.0-0' }}</h4>
+                <h4>Date: {{ todayDate | date: 'yyyy-MM-dd'}}</h4>
+        </div>
+    </app-profile>
+    <button (click)="increment()">+</button>
+    <button (click)="decrement()">-</button>
+    <div>Число до форматирования: {{x}}<br>Число после форматирования: {{x | format}}</div>
+</div>
+<ng-template #ngTemplateExample>
+    <h1>Example for ng-template</h1>
+
+</ng-template>
+
+<ng-template #ngTemplateChildExample>
+    <h1>Example for ng-template in child</h1>
+</ng-template>
+
+
+
+
+<!-- <div *ngIf="isUserLoggedIn; else logInTmpl">
+
+    <app-profile [userName]="userName" [titleTmpl]="profileTitleTmpl" (onLogout)="logout()"></app-profile>
+
+    <ng-container *ngTemplateOutlet="articlesTitleTmpl"></ng-container>
+    <ul>
+        <li *ngFor="let article of articles">
+            {{ article.name }}
+        </li>
+    </ul>
+
+    <table>
+        <tr *ngFor="let article of articles">
+            <td>{{ article.name }}</td>
+            <td>{{ article.author }}</td>
+        </tr>
+    </table>
+</div>
+
+
+<ng-template #logInTmpl>
+    <p>Please, log in...</p>
+</ng-template>
+
+<ng-template #articlesTitleTmpl>
+    <h1>Articles:</h1>
+</ng-template>
+
+<ng-template #profileTitleTmpl>
+    <h1>Profile</h1>
+</ng-template> -->
