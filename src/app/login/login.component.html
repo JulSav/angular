@@ -1,0 +1,24 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<div class="wrapper">
+  <div id="formContent">
+
+    <form [formGroup]="form">
+      <input type="text" id="login" class="second" name="login" placeholder="login" formControlName="login">
+      <input type="text" id="password" class="third" name="login" placeholder="password" formControlName="password">
+      <input type="submit" class="fourth" value="Log In" (click)="login()">
+    </form>
+
+    <div class="text-danger" *ngIf="isEmpty">
+      Empty form
+    </div>
+
+    <div class="text-danger" *ngIf="this.authService.authorizationError">
+      Wrong login or password!
+    </div>
+
+
+  </div>
+</div>
