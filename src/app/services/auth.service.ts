@@ -34,6 +34,9 @@ export class AuthService {
     return localStorage.getItem(this.accessTokenKey);
   }
 
+  saveToken(token: string): void {
+    localStorage.setItem(this.accessTokenKey, token);
+  }
   logout(): void {
     localStorage.removeItem(this.accessTokenKey);
     this.router.navigate(['/login']);
